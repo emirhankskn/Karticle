@@ -1,0 +1,52 @@
+<div id="mainNavigation">
+
+  <div class="navbar-expand-md">
+    <div class="navbar-dark text-center ">
+      <button class="navbar-toggler w-75" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span> <span class="align-middle">Menu</span>
+      </button>
+    </div>
+    <div class="text-center mt-3 collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+
+
+
+      </ul>
+      <ul class="navbar-nav mx-auto ">
+        <li class="nav-item">
+          <i class="fa-solid fa-house" style="color: #ffffff;"></i>
+          <a class="nav-link" aria-current="page" href="/">Anasayfa</a>
+
+        </li>
+        <li class="nav-item">
+          <i class="fa-regular fa-compass" style="color: #ffffff;"></i>
+          <a class="nav-link" href="/explore">Keşfet</a>
+        </li>
+        <div class="text-center"><a class="logo-a" href="/">
+            <img src="{{ url_for('static', filename = 'images/logo1.png') }}" alt="" style="height: 7vh;"
+              class="invert"></a>
+        </div>
+        <li class="nav-item">
+          <i class="fa-solid fa-address-book" style="color: #ffffff;"></i>
+          <a class="nav-link" href="/about">Hakkımda</a>
+        </li>
+        <li class="nav-item">
+          <i class="fa-solid fa-address-card" style="color: #ffffff;"></i>
+          <a class="nav-link" href="/contact">İletişim</a>
+        </li>
+      </ul>
+
+
+      
+
+      {% if session["logged_in"] == True %}
+      <a href="/dashboard" style="margin-left:26px; position: absolute;"
+        class="btn btn-outline-light p-2 rounded-start-pill">Dashboard</a>
+      <a href="/logout" style="margin-left:143px; position: absolute;"
+        class="btn btn-outline-light p-2 rounded-end-pill">Çıkış Yap</a>
+      {% endif %}
+
+    </div>
+  </div>
+</div>

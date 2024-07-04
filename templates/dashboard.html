@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+
+<h1>Admin Kontrol Paneli</h1>
+<small>Hoşgeldin, {{ session["username"] }} !</small>
+<hr>
+<a href="/addarticle" class="btn btn-danger">Makale Ekle</a>
+<a href="/usermessages" class="btn btn-warning">Gelen Kutusu</a>
+<hr>
+
+{% if articles %}
+<table class="table table-hover">
+    <thead class="table-success table-bordered">
+        <tr>
+            <th class="text-muted" scope="col">ID</th>
+            <th class="text-dark" scope="col">Title</th>
+            <th class="text-dark" scope="col">Show Home</th>
+            <th class="text-dark" scope="col">Author</th>
+            <th class="text-dark" scope="col">Date</th>
+            <th class="text-dark" scope="col"></th>
+            <th class="text-dark" scope="col"></th>
+        </tr>
+    </thead>
+    <tbody class="table-light">
+
+        {% for article in articles %}
+        <tr>
+            <th class="text-muted" scope="row">{{article.ID}}</th>
+            <td><a class="btn btn-light" style="text-decoration: none; color: black;"
+                    href="/article/{{article.ID}}">{{article.title}}</a></td>
+            <td>{{article.show_home}}</td>
+            <td>{{article.author}}</td>
+            <td class="text-muted">{{article.created_date}}</td>
+            <td><a class="btn btn-sm btn-warning" href="/update/{{article.ID}}">Güncelle</a></td>
+            <td><a class="btn btn-sm btn-outline-danger px-4" href="/delete/{{article.ID}}">Sil</a>
+            </td>
+        </tr>
+        {% endfor %}
+
+    </tbody>
+</table>
+{% else %}
+<div class="alert alert-danger">Henüz bir makale eklemediniz...</div>
+{% endif %}
+
+<hr>
+
+{% endblock body %}

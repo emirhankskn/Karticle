@@ -1,0 +1,32 @@
+
+{% extends "layout.html" %}
+
+{% block body %}
+
+{% include "includes/navbar.html" %}
+
+
+<div class="login-box">
+
+    <form method="post">
+        <div class="user-box">
+            <input type="text" name="username" required="">
+            <label>Username</label>
+        </div>
+        <div class="user-box">
+            <input type="password" name="password" required="">
+            <label>Password</label>
+        </div>
+        <center>
+            <button type="submit" style = "border-radius:15px;">
+                <a>
+                    LOGADMIN
+                    <span></span>
+                </a>
+            </button>
+        </center>
+    </form>
+</div>
+
+
+{% endblock body %}

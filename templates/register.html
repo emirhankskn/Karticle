@@ -1,0 +1,85 @@
+{% extends "layout.html" %}
+
+
+{% block body %}
+{% from "includes/formhelpers.html" import render_field %}
+
+<form method="post">
+    <section class="text-center text-lg-start">
+        <style>
+          .cascading-right {
+            margin-right: -200px;
+          }
+      
+          @media (max-width: 991.98px) {
+            .cascading-right {
+              margin-right: 0;
+            }
+          }
+        </style>
+      
+        <div class="container py-4">
+          <div class="row g-0 align-items-center">
+            <div class="col-lg-6 mb-5 mb-lg-0">
+              <div class="card cascading-right" style="
+                  background: hsla(0, 0%, 100%, 0.55);
+                  backdrop-filter: blur(30px);
+                  ">
+                <div class="card-body p-5 shadow-5 text-center">
+                  <h2 class="fw-bold mb-5">Kaydol</h2>
+                  <form>
+                    <div class="row">
+                      <div class="col-md-6 mb-4">
+                        <div class="form-outline">
+                            {{ render_field(form.name, class = "form-control") }}
+                        </div>
+                      </div>
+                      <div class="col-md-6 mb-4">
+                        <div class="form-outline">
+                          {{ render_field(form.username, class = "form-control") }}
+                        </div>
+                      </div>
+                    </div>
+      
+                    <div class="form-outline mb-4">
+                      {{ render_field(form.email, class = "form-control") }}
+                    </div>
+      
+                    <div class="form-outline mb-4">
+                      {{ render_field(form.password, class = "form-control") }}
+                    </div>
+
+                    <div class="form-outline mb-4">
+                        {{ render_field(form.confirm, class = "form-control") }}
+                      </div>
+      
+                    <div class="form-check d-flex justify-content-center mb-4">
+                      <input class="form-check-input me-2" type="checkbox" value="" id="form2Example33" checked />
+                      <label class="form-check-label" for="form2Example33">
+                        Yeni makalelerden haberdar ol.
+                      </label>
+                    </div>
+      
+                    <button type="submit" class="btn btn-primary btn-block mb-4">
+                      Kaydol
+                    </button>
+      
+                    
+                  </form>
+                </div>
+              </div>
+            </div>
+      
+            <div class="col-lg-6 mb-5 mb-lg-0">
+              <img src="{{ url_for('static', filename = 'images/600x800.jpg') }}" class="w-100 rounded-4 shadow-4"
+                alt="" />
+            </div>
+          </div>
+        </div>
+      </section>
+</form>
+
+
+
+
+{% endblock body %}

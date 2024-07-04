@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<h3 style="margin-top:50px;">Makale Oluştur</h3>
+<hr>
+
+{{ ckeditor.load() }}
+
+
+<form method="post" enctype="multipart/form-data">
+    <div class="add_form_main">
+        <div class="add_form_item">
+            <label for="title">Başlık:</label>
+            <input type="text" name="title">
+        </div>
+        <div class="add_form_item">
+            <label for="title">İçerik:</label>
+            <textarea id="ckeditor" name="content"></textarea>
+        </div>
+        <div class="add_form_item">
+            <label for="title">Keşfette görünecek içerik:</label>
+            <textarea type="text" name="explore_content"></textarea>
+        </div>
+        <div class="add_form_item">
+            <label for="file"><u>Thumbnail</u></label>
+            <center>
+                <input class="form-control" style="width:50%;" name="file" type="file" accept="image/*" required="">
+            </center>
+        </div>
+        <div class="add_form_item">
+            <div class="form-check form-switch d-flex justify-content-center">
+                <input class="form-check-input" type="checkbox" name="show_home" id="flexSwitchCheckDefault">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Ana sayfada gözüksün.</label>
+            </div>
+        </div>
+    </div>
+    <button class="submit">Submit</button>
+</form>
+
+
+<hr>
+<script>
+    CKEDITOR.replace('ckeditor');
+</script>
+
+{% endblock body %}

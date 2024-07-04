@@ -1,0 +1,79 @@
+{%extends "layout.html"%}
+{%block body%}
+<div class="responsive-container-block bigContainer">
+  <div class="responsive-container-block Container">
+    <div class="imgContainer">
+      <img class="mainImg" src="{{ url_for('static', filename = 'images/dene.webp') }}">
+    </div>
+    <div class="responsive-container-block textSide">
+      <p class="text-blk heading">
+        Ben kimim ?
+      </p>
+      <p class="text-blk subHeading">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus id minima eligendi fuga delectus temporibus
+        harum nesciunt vero voluptas repellendus quia dignissimos quibusdam consequatur qui, porro ipsam sequi. Ab,
+        aliquid.
+      </p>
+      <div class="responsive-cell-block wk-desk-6 wk-ipadp-6 wk-tab-12 wk-mobile-12">
+        <div class="cardImgContainer">
+          <img class="cardImg" src="{{ url_for('static', filename = 'images/tarih.jpg') }}">
+        </div>
+        <div class="cardText">
+          <p class="text-blk cardHeading">
+            Tarih
+          </p>
+          <p class="text-blk cardSubHeading">
+            Tarihini bilmeyen bir millet yok olmaya mahkumdur.
+          </p>
+        </div>
+      </div>
+      <div class="responsive-cell-block wk-desk-6 wk-ipadp-6 wk-tab-12 wk-mobile-12">
+        <div class="cardImgContainer">
+          <img class="cardImg" src="{{ url_for('static', filename = 'images/edebiyat.jpg') }}">
+        </div>
+        <div class="cardText">
+          <p class="text-blk cardHeading">
+            Edebiyat
+          </p>
+          <p class="text-blk cardSubHeading">
+            Kelimeler albayım, kelimeler bazı anlamlara gelmiyorlar.
+          </p>
+        </div>
+      </div>
+      <div class="responsive-cell-block wk-desk-6 wk-ipadp-6 wk-tab-12 wk-mobile-12">
+        <div class="cardImgContainer">
+          <img class="cardImg" src="{{ url_for('static', filename = 'images/bilim.jpg') }}">
+        </div>
+        <div class="cardText">
+          <p class="text-blk cardHeading">
+            Bilim
+          </p>
+          <p class="text-blk cardSubHeading">
+            Cehalet, en korkunç silahtan daha etkin bir yok edicidir.
+          </p>
+        </div>
+      </div>
+      <div class="responsive-cell-block wk-desk-6 wk-ipadp-6 wk-tab-12 wk-mobile-12">
+        <div class="cardImgContainer">
+          <img class="cardImg" src="{{ url_for('static', filename = 'images/müzik.jpg') }}">
+        </div>
+        <div class="cardText">
+          <p class="text-blk cardHeading">
+            Müzik
+          </p>
+          <p class="text-blk cardSubHeading">
+            Her sazın bağrına pençe vurulmaz, incedir kırılır tel gizli gizli.
+          </p>
+        </div>
+      </div>
+      <a href="/explore">
+        <button class="btn-about-explore">Makaleleri Keşfet</button>
+      </a>
+    </div>
+  </div>
+</div>
+
+{% include "includes/footer.html" %}
+
+
+{%endblock%}

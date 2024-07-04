@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+    <h3>Admin Kontrol Paneli</h3>
+    <small>Hoşgeldin, {{ session["username"] }}</small>
+    <hr>
+    <a href="/dashboard" class="btn btn-danger">Geri</a>
+
+    <hr>
+
+    {% if user_messages %}
+        <table class="table table-hover">
+                <thead class="table-success table-bordered">
+                    <tr>
+                        <th class="text-muted" scope="col">ID</th>
+                        <th class="text-dark" scope="col">Name</th>
+                        <th class="text-dark" scope="col">Email</th>
+                        <th class="text-dark" scope="col">Date</th>
+                        <th class="text-dark" scope="col">Message</th>
+                        <th class="text-dark" scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody class="table-light">
+
+                    {% for message in user_messages %}
+                    <tr>
+                        <th class="text-muted" scope="row">{{message.ID}}</th>
+                        <td><a class="btn btn-light" style="text-decoration: none; color: black;" href="#">{{message.name}}</a></td>
+                        <td>{{message.email}}</td>
+                        <td class="text-muted">{{message.sended_date}}</td>
+                        <td><div style = "inline-size: 700px; overflow-wrap: break-word;">{{message.msg}}</div></td>
+                        <td><a class="btn btn-sm btn-outline-danger" href="/deleteusermessage/{{message.ID}}">Delete</a></td>
+                    </tr>
+                    {% endfor %}
+
+                </tbody>
+        </table>
+    {% else %}
+        <div class="alert alert-danger">Herhangi bir mesaj gelmedi...</div>
+    {% endif %}
+
+{% endblock body %}
